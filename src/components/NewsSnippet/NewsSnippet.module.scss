@@ -1,0 +1,189 @@
+.newsSnippet {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 16px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 12px;
+        color: #8b949e;
+
+        .metadata {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+
+            .date, .reach, .traffic, .language {
+                color: #8b949e;
+            }
+
+            .sentiment {
+                text-transform: capitalize;
+                padding: 0 8px;
+                border-radius: 12px;
+                font-size: 11px;
+                line-height: 18px;
+                background: #238636;
+                color: #fff;
+                border: none;
+
+                &:global(.ant-tag-default) {
+                    background: #30363d;
+                }
+            }
+        }
+
+        .actions {
+            display: flex;
+            gap: 4px;
+
+            :global(.ant-btn) {
+                color: #8b949e;
+                &:hover {
+                    color: #58a6ff;
+                }
+            }
+        }
+    }
+
+    .content {
+        .title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 12px;
+            line-height: 1.4;
+
+            a {
+                color: #58a6ff;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .source {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #8b949e;
+            font-size: 12px;
+            margin-bottom: 12px;
+
+            a {
+                color: #8b949e;
+                text-decoration: none;
+
+                &:hover {
+                    color: #58a6ff;
+                    text-decoration: underline;
+                }
+            }
+
+            .authors {
+                color: #8b949e;
+            }
+        }
+
+        .text {
+            color: #c9d1d9;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+
+            mark {
+                background-color: rgba(88, 166, 255, 0.15);
+                color: #58a6ff;
+                padding: 0 2px;
+                border-radius: 2px;
+            }
+
+            .showMoreBtn {
+                color: #58a6ff;
+                font-size: 12px;
+                padding: 0;
+                height: auto;
+                margin-top: 4px;
+
+                &:hover {
+                    color: #79c0ff;
+                }
+            }
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+
+            .tagWrapper {
+                display: inline-flex;
+                align-items: center;
+                background: #161b22;
+                border: 1px solid #30363d;
+                border-radius: 12px;
+                padding: 0 8px;
+                height: 24px;
+                font-size: 12px;
+                cursor: pointer;
+
+                .tagText {
+                    color: #8b949e;
+                }
+
+                .tagCount {
+                    margin-left: 6px;
+                    padding: 0 6px;
+                    background: #30363d;
+                    border-radius: 10px;
+                    font-size: 11px;
+                    color: #8b949e;
+                }
+
+                &:hover {
+                    border-color: #58a6ff;
+                    .tagText {
+                        color: #58a6ff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+    .newsSnippet {
+        margin: 10px;
+        
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+
+            .metadata {
+                flex-wrap: wrap;
+            }
+
+            .actions {
+                align-self: flex-end;
+            }
+        }
+
+        .content {
+            .title {
+                font-size: 18px;
+            }
+        }
+    }
+} 
