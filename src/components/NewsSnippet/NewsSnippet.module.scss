@@ -18,26 +18,11 @@
         .metadata {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             flex-wrap: wrap;
 
-            .date, .reach, .traffic, .language {
+            .date, .reach, .traffic {
                 color: #8b949e;
-            }
-
-            .sentiment {
-                text-transform: capitalize;
-                padding: 0 8px;
-                border-radius: 12px;
-                font-size: 11px;
-                line-height: 18px;
-                background: #238636;
-                color: #fff;
-                border: none;
-
-                &:global(.ant-tag-default) {
-                    background: #30363d;
-                }
             }
         }
 
@@ -45,47 +30,77 @@
             display: flex;
             gap: 4px;
 
-            :global(.ant-btn) {
+            button {
+                width: 24px;
+                height: 24px;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 color: #8b949e;
+                border: none;
+                background: transparent;
+                font-size: 16px;
+                
                 &:hover {
                     color: #58a6ff;
+                    background: rgba(88, 166, 255, 0.1);
                 }
+            }
+
+            .infoButton {
+                font-size: 14px;
             }
         }
     }
 
-    .content {
-        .title {
-            font-size: 20px;
-            font-weight: 600;
-            margin: 0 0 12px;
-            line-height: 1.4;
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 12px;
+        line-height: 1.4;
 
-            a {
-                color: #58a6ff;
-                text-decoration: none;
+        a {
+            color: #58a6ff;
+            text-decoration: none;
 
-                &:hover {
-                    text-decoration: underline;
-                }
+            &:hover {
+                text-decoration: underline;
             }
         }
+    }
 
-        .source {
+    .sourceInfo {
+        margin-bottom: 12px;
+
+        .sourceDetails {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 16px;
             color: #8b949e;
             font-size: 12px;
-            margin-bottom: 12px;
 
-            a {
+            a, span {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .domain {
                 color: #8b949e;
                 text-decoration: none;
 
                 &:hover {
                     color: #58a6ff;
-                    text-decoration: underline;
+                }
+            }
+
+            .country {
+                .flag {
+                    width: 14px;
+                    height: 10px;
+                    object-fit: cover;
+                    border-radius: 2px;
                 }
             }
 
@@ -93,68 +108,222 @@
                 color: #8b949e;
             }
         }
+    }
+
+    .content {
+        color: #c9d1d9;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 16px;
 
         .text {
-            color: #c9d1d9;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
 
-            mark {
+            .highlight {
                 background-color: rgba(88, 166, 255, 0.15);
                 color: #58a6ff;
                 padding: 0 2px;
                 border-radius: 2px;
             }
+        }
 
-            .showMoreBtn {
-                color: #58a6ff;
-                font-size: 12px;
-                padding: 0;
-                height: auto;
-                margin-top: 4px;
+        .showMoreBtn {
+            color: #58a6ff;
+            font-size: 12px;
+            padding: 0;
+            height: auto;
 
-                &:hover {
-                    color: #79c0ff;
+            &:hover {
+                color: #79c0ff;
+                background: transparent;
+            }
+        }
+    }
+
+    .keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+
+        .keywordTag {
+            display: inline-flex;
+            align-items: center;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 0 8px;
+            height: 24px;
+            font-size: 12px;
+            cursor: pointer;
+
+            &:hover {
+                border-color: #58a6ff;
+                .keywordText {
+                    color: #58a6ff;
                 }
+            }
+
+            .keywordIcon {
+                width: 12px;
+                height: 12px;
+                margin-right: 6px;
+                background-color: #8b949e;
+                mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5'/%3E%3C/svg%3E") no-repeat center;
+            }
+
+            .keywordText {
+                color: #8b949e;
+            }
+
+            .keywordCount {
+                margin-left: 6px;
+                padding: 0 6px;
+                background: #30363d;
+                border-radius: 10px;
+                font-size: 11px;
+                color: #8b949e;
+                min-width: 20px;
+                text-align: center;
             }
         }
 
-        .tags {
+        .showAllBtn {
+            color: #58a6ff;
+            font-size: 12px;
+            padding: 0;
+            height: 24px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+
+            &:hover {
+                color: #79c0ff;
+                background: transparent;
+            }
+        }
+    }
+
+    .duplicates {
+        border-top: 1px solid #30363d;
+        margin: 0 -16px;
+        padding: 12px 16px 0;
+
+        .viewDuplicatesBtn {
+            color: #8b949e;
+            font-size: 12px;
+            padding: 0;
+            height: auto;
+            display: flex;
+            align-items: center;
             gap: 8px;
-            margin-top: 16px;
 
-            .tagWrapper {
-                display: inline-flex;
+            .arrow {
+                font-size: 10px;
+                transition: transform 0.2s ease;
+
+                &.expanded {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &:hover {
+                color: #58a6ff;
+                background: transparent;
+            }
+        }
+
+        .duplicatesList {
+            margin-top: 12px;
+        }
+
+        .duplicateItem {
+            padding: 12px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background: rgba(22, 27, 34, 0.5);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .duplicateHeader {
+                display: flex;
+                justify-content: space-between;
                 align-items: center;
-                background: #161b22;
-                border: 1px solid #30363d;
-                border-radius: 12px;
-                padding: 0 8px;
-                height: 24px;
-                font-size: 12px;
-                cursor: pointer;
+                margin-bottom: 8px;
 
-                .tagText {
+                .duplicateMetadata {
+                    display: flex;
+                    gap: 16px;
                     color: #8b949e;
+                    font-size: 12px;
                 }
 
-                .tagCount {
-                    margin-left: 6px;
-                    padding: 0 6px;
-                    background: #30363d;
-                    border-radius: 10px;
-                    font-size: 11px;
-                    color: #8b949e;
-                }
-
-                &:hover {
-                    border-color: #58a6ff;
-                    .tagText {
-                        color: #58a6ff;
+                .actions {
+                    button {
+                        width: 24px;
+                        height: 24px;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #8b949e;
+                        border: none;
+                        background: transparent;
+                        font-size: 16px;
+                        
+                        &:hover {
+                            color: #58a6ff;
+                            background: rgba(88, 166, 255, 0.1);
+                        }
                     }
+                }
+            }
+
+            .duplicateTitle {
+                font-size: 14px;
+                font-weight: 600;
+                color: #c9d1d9;
+                margin: 0 0 8px;
+                line-height: 1.4;
+
+                .highlight {
+                    background-color: rgba(88, 166, 255, 0.15);
+                    color: #58a6ff;
+                    padding: 0 2px;
+                    border-radius: 2px;
+                }
+            }
+
+            .duplicateSource {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                color: #8b949e;
+                font-size: 12px;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                }
+
+                .domain {
+                    color: #8b949e;
+                }
+
+                .country {
+                    .flag {
+                        width: 14px;
+                        height: 10px;
+                        object-fit: cover;
+                        border-radius: 2px;
+                    }
+                }
+
+                .authors {
+                    color: #8b949e;
                 }
             }
         }
@@ -167,22 +336,19 @@
         margin: 10px;
         
         .header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-
             .metadata {
-                flex-wrap: wrap;
-            }
-
-            .actions {
-                align-self: flex-end;
+                gap: 12px;
             }
         }
 
-        .content {
-            .title {
-                font-size: 18px;
+        .title {
+            font-size: 18px;
+        }
+
+        .sourceInfo {
+            .sourceDetails {
+                flex-wrap: wrap;
+                gap: 12px;
             }
         }
     }

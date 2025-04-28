@@ -33,6 +33,28 @@ const mockData = {
     HIGHLIGHTS: [
         "...<kw>Kaspersky</kw> research...",
         "...<kw>mobile banking</kw> security..."
+    ],
+    DUPLICATES: [
+        {
+            TI: "UK Mobile Banking Security Concerns: Half of Smartphones Lack Protection",
+            DOM: "securityweek.com",
+            CNTR: "United States",
+            CNTR_CODE: "US",
+            AU: ["Alice Johnson"],
+            DP: "2025-03-06T22:30:00",
+            REACH: 1892,
+            HIGHLIGHTS: ["...<kw>mobile banking</kw> security concerns..."]
+        },
+        {
+            TI: "Kaspersky Study: Mobile Banking Users at Risk Due to Inadequate Security",
+            DOM: "techradar.com",
+            CNTR: "United Kingdom",
+            CNTR_CODE: "GB",
+            AU: ["Robert Wilson", "Emma Brown"],
+            DP: "2025-03-07T08:15:00",
+            REACH: 3150,
+            HIGHLIGHTS: ["...<kw>Kaspersky</kw> research findings..."]
+        }
     ]
 };
 
